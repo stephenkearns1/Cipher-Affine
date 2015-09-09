@@ -35,8 +35,8 @@ public class AffineCipherDecrypting extends AlfineCipher {
         /*
           
          Finds the Multiplicative inverse of keyA by,
-         multiplying i by m which is the size of the alphbate, and adding 1, 
-         then dividing by keyA. numbers are subitsuited into i starting from 1 to 26,
+         multiplying i by m which is the size of the alphabet, and adding 1, 
+         then dividing by keyA. numbers are substituted into i starting from 1 to 26,
          untill a whole number is found.
       
          */
