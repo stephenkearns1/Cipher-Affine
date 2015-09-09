@@ -31,37 +31,43 @@ public class AlfineCipherEncrypting extends AlfineCipher{
     public String Encrypt(){
         
      //try catch to find errors
-    try{
-        for(int i = 0; i < plainTxt.length(); i++){
-            ConvertTxt(plainTxt,i);
-            characterAlphabet(l);
-           // arrNums.add(Character.getNumericValue((sBuff.charAt(i))));
-            System.out.println(listTxt.get(i) + "\n Newline:");
-            
+      try {
+            for (int i = 0; i < plainTxt.length(); i++) {
+                ConvertTxt(plainTxt, i);
+                characterAlphabet(l);
+                // arrNums.add(Character.getNumericValue((sBuff.charAt(i))));
+                System.out.println(listTxt.get(i) + "\n Newline:");
+
+             }
+
+            //sBuff = new StringBuffer(); 
+            HoldingArryEncryptTxt();
+            listTxt.clear();
+            for (int j = 0; j < plainTxt.length(); j++) {
+                int holding = 0;
+                holding = listNums.get(j);
+                encipher = (holding * keyA + keyB) % m;
+                NumToChar(encipher);
+                //JOptionPane.showMessageDialog(null, listNums.get(j) + "\n");
+
+            }
+            StringBuilder sb;
+            sb = new StringBuilder();
+          for (String s : listTxt){
+                sb.append(s);
+                
+            }
+           
+          EncryptedTxt = sb.toString();
+          
+          JOptionPane.showMessageDialog(null, "Encrypted Text" + EncryptedTxt);
+
+
+        } catch (Exception e) {
+            System.out.println(e);
         }
-        
-        
-        
-        
-        //sBuff = new StringBuffer(); 
-        HoldingArryEncryptTxt();
-        for(int j = 0; j < plainTxt.length(); j++){
-             int holding = 0;
-             holding = listNums.get(j);
-             encipher = (holding * keyA + keyB) % m;
-             NumToChar(encipher);
-            JOptionPane.showMessageDialog(null,listNums.get(j)+ "\n");
-        
-          }
-        
-       // JOptionPane.showMessageDialog(null, "Encrypted Text" + sBuff);
-        EncryptedTxt = listTxt.toString();
-        
-     }catch(Exception e){
-         System.out.println(e);
-     }
-       return EncryptedTxt;
-    
+    return EncryptedTxt;
+
     } //end of function
      
     

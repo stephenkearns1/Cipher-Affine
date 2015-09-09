@@ -9,17 +9,17 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Stephen kearns
+ * @author Stephen J Kearns
  */
 public class AlfineCipher {
 
-    String plainTxt,EncryptedChar;
+    String plainTxt, EncryptedChar;
     int keyA, keyB, m;
     StringBuffer sBuff;
     ArrayList<String> listTxt;
     ArrayList<Integer> listNums;
     char l;
-  
+
     public AlfineCipher() {
         plainTxt = "";
         keyA = 0;
@@ -42,149 +42,191 @@ public class AlfineCipher {
         this.keyB = keyB;
     }
 
-  
-    
-    
     // function will take each of the charactors one at a time, and return there numeric repersentation
-    public void characterAlphabet(char l){
-        switch(l){
-            case 'a': listTxt.add("1");
+    public void characterAlphabet(char l) {
+        switch (l) {
+            case 'a':
+                listTxt.add("1");
                 break;
-            case 'b': listTxt.add("2");
+            case 'b':
+                listTxt.add("2");
                 break;
-            case 'c': listTxt.add("3");
+            case 'c':
+                listTxt.add("3");
                 break;
-            case 'd': listTxt.add("4");
+            case 'd':
+                listTxt.add("4");
                 break;
-            case 'e': listTxt.add("5");
+            case 'e':
+                listTxt.add("5");
                 break;
-            case 'f': listTxt.add("6");
+            case 'f':
+                listTxt.add("6");
                 break;
-            case 'g': listTxt.add("7");
+            case 'g':
+                listTxt.add("7");
                 break;
-            case 'h': listTxt.add("8");
+            case 'h':
+                listTxt.add("8");
                 break;
-            case 'i': listTxt.add("9");
+            case 'i':
+                listTxt.add("9");
                 break;
-            case 'j': listTxt.add("10");
+            case 'j':
+                listTxt.add("10");
                 break;
-            case 'k': listTxt.add("11");
+            case 'k':
+                listTxt.add("11");
                 break;
-            case 'l': listTxt.add("12");
+            case 'l':
+                listTxt.add("12");
                 break;
-            case 'm': listTxt.add("13");
+            case 'm':
+                listTxt.add("13");
                 break;
-            case 'n': listTxt.add("14");
+            case 'n':
+                listTxt.add("14");
                 break;
-            case 'o': listTxt.add("15");
+            case 'o':
+                listTxt.add("15");
                 break;
-            case 'p': listTxt.add("16");
+            case 'p':
+                listTxt.add("16");
                 break;
-            case 'q': listTxt.add("17");
+            case 'q':
+                listTxt.add("17");
                 break;
-            case 'r': listTxt.add("18");
+            case 'r':
+                listTxt.add("18");
                 break;
-            case 's': listTxt.add("19");
+            case 's':
+                listTxt.add("19");
                 break;
-            case 't': listTxt.add("20");
+            case 't':
+                listTxt.add("20");
                 break;
-            case 'u': listTxt.add("21");
+            case 'u':
+                listTxt.add("21");
                 break;
-            case 'v': listTxt.add("22");
+            case 'v':
+                listTxt.add("22");
                 break;
-            case 'w': listTxt.add("23");
+            case 'w':
+                listTxt.add("23");
                 break;
-            case 'x': listTxt.add("24");
+            case 'x':
+                listTxt.add("24");
                 break;
-            case 'y': listTxt.add("25");
+            case 'y':
+                listTxt.add("25");
                 break;
-            case 'z': listTxt.add("26");
+            case 'z':
+                listTxt.add("26");
                 break;
-           
-            
-                
+
         }
-            
+
     }
-    
-    public void NumToChar(int num){
-            switch(num){
-            case 1: sBuff.append("a");
+
+    public void NumToChar(int num) {
+        switch (num) {
+            case 1:
+                 listTxt.add("a");
                 break;
-            case 2: sBuff.append("b");
+            case 2:
+                 listTxt.add("b");
                 break;
-            case 3: sBuff.append("c");
+            case 3:
+                 listTxt.add("c");
                 break;
-            case 4:sBuff.append("d");
+            case 4:
+                 listTxt.add("d");
                 break;
-            case 5:sBuff.append("e");
-                break; 
-            case 6: sBuff.append("f");
+            case 5:
+                 listTxt.add("e");
                 break;
-            case 7: sBuff.append("g");
+            case 6:
+                 listTxt.add("f");
                 break;
-            case 8: sBuff.append("h");
+            case 7:
+                 listTxt.add("g");
                 break;
-            case 9: sBuff.append("i");
+            case 8:
+                 listTxt.add("h");
                 break;
-            case 10: sBuff.append("j");
+            case 9:
+                 listTxt.add("i");
                 break;
-            case 11: sBuff.append("k");
+            case 10:
+                 listTxt.add("j");
                 break;
-            case 12: sBuff.append("l");
+            case 11:
+                 listTxt.add("k");
                 break;
-            case 13: sBuff.append("m");
+            case 12:
+                 listTxt.add("l");
                 break;
-            case 14: sBuff.append("n");
+            case 13:
+                 listTxt.add("m");
                 break;
-            case 15: sBuff.append("o");
+            case 14:
+                 listTxt.add("n");
                 break;
-            case 16: sBuff.append("p");
+            case 15:
+                 listTxt.add("o");
                 break;
-            case 17: sBuff.append("q");
+            case 16:
+                 listTxt.add("p");
                 break;
-            case 18: sBuff.append("r");
+            case 17:
+                 listTxt.add("q");
                 break;
-            case 19: sBuff.append("s");
+            case 18:
+                 listTxt.add("r");
                 break;
-            case 20: sBuff.append("t");
+            case 19:
+                 listTxt.add("s");
                 break;
-            case 21: sBuff.append("u");
+            case 20:
+                 listTxt.add("t");
                 break;
-            case 22: sBuff.append("v");
+            case 21:
+                 listTxt.add("u");
                 break;
-            case 23: sBuff.append("w");
+            case 22:
+                 listTxt.add("v");
                 break;
-            case 24: sBuff.append("x");
+            case 23:
+                 listTxt.add("w");
                 break;
-            case 25: sBuff.append("y");
+            case 24:
+                 listTxt.add("x");
                 break;
-            case 26: sBuff.append("z");
+            case 25:
+                listTxt.add("y");
                 break;
-           
-            
-                
+            case 26:
+                listTxt.add("z");
+                break;
+
         }
-            
-           
+
     }
-    
-public char ConvertTxt(String plainTxt, int i){
-        
-       l = plainTxt.charAt(i);
-   
-    return l;
-   
-   }
 
-   public void HoldingArryEncryptTxt(){
-        for(int i = 0; i < listTxt.size(); i++){
-           int stringToNum = Integer.parseInt(listTxt.get(i));
-           listNums.add(stringToNum);
-     }
-        
-   }
+    public char ConvertTxt(String plainTxt, int i) {
 
+        l = plainTxt.charAt(i);
 
-    
+        return l;
+
+    }
+
+    public void HoldingArryEncryptTxt() {
+        for (int i = 0; i < listTxt.size(); i++) {
+            int stringToNum = Integer.parseInt(listTxt.get(i));
+            listNums.add(stringToNum);
+        }
+
+    }
+
 }

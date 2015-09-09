@@ -17,6 +17,7 @@ public class AffineCipherDecrypting extends AlfineCipher {
     protected ArrayList<Integer> numList;
     protected int decipher;
     private int inverse;
+    protected String decryptedTxt;
 
     public AffineCipherDecrypting(int keyA, int keyB, int m, char l) {
         this.keyA = keyA;
@@ -64,13 +65,26 @@ public class AffineCipherDecrypting extends AlfineCipher {
 
         HoldingArryEncryptTxt();
         modInverse();
+        listTxt.clear();
         for (int j = 0; j < encryptedTxt.length(); j++) {
             int holding = 0;
-            holding = numList.get(j);
-            decipher = (inverse * holding - keyB) % m;
+            holding = listNums.get(j);
+            decipher = inverse * (holding - keyB) % m;
             NumToChar(decipher);
-            JOptionPane.showMessageDialog(null, numList.get(j) + "\n");
+            JOptionPane.showMessageDialog(null, listNums.get(j) + "\n");
         }
+    
+          StringBuilder sb;
+          sb = new StringBuilder();
+          for (String s : listTxt){
+                sb.append(s);
+                
+            }
+           
+          decryptedTxt = sb.toString();
+          
+          JOptionPane.showMessageDialog(null, "Encrypted Text" + decryptedTxt);
+    
     }
    
 
