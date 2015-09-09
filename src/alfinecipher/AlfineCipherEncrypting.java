@@ -31,6 +31,7 @@ public class AlfineCipherEncrypting extends AlfineCipher{
     public String Encrypt(){
         
      //try catch to find errors
+      plainTxt = plainTxt.replaceAll("\\s+","");
       try {
             for (int i = 0; i < plainTxt.length(); i++) {
                 ConvertTxt(plainTxt, i);
