@@ -5,6 +5,8 @@
  */
 package alfinecipher;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Stephen kearns
@@ -13,13 +15,18 @@ public class AlfineCipher {
 
     String plainTxt,EncryptedChar;
     int keyA, keyB, m;
-    StringBuffer sBuff; 
+    StringBuffer sBuff;
+    ArrayList<String> listTxt;
+    ArrayList<Integer> listNums;
+    char l;
   
     public AlfineCipher() {
         plainTxt = "";
         keyA = 0;
         keyB = 0;
         m = 26;
+        listTxt = new ArrayList<String>();
+        listNums = new ArrayList<Integer>();
         sBuff = new StringBuffer();
     }
 
@@ -34,60 +41,64 @@ public class AlfineCipher {
     public void setKeyB(int keyB) {
         this.keyB = keyB;
     }
+
+  
+    
+    
     // function will take each of the charactors one at a time, and return there numeric repersentation
-    public void characterAlphabet(String letter){
-        switch(plainTxt){
-            case "a": EncryptedChar = "A";
+    public void characterAlphabet(char l){
+        switch(l){
+            case 'a': listTxt.add("1");
                 break;
-            case "b": 
+            case 'b': listTxt.add("2");
                 break;
-            case "c": 
+            case 'c': listTxt.add("3");
                 break;
-            case "d":
+            case 'd': listTxt.add("4");
                 break;
-            case "e":
+            case 'e': listTxt.add("5");
                 break;
-            case "f":
+            case 'f': listTxt.add("6");
                 break;
-            case "g":
+            case 'g': listTxt.add("7");
                 break;
-            case "h":
+            case 'h': listTxt.add("8");
                 break;
-            case "i":
+            case 'i': listTxt.add("9");
                 break;
-            case "j":
+            case 'j': listTxt.add("10");
                 break;
-            case "k":
+            case 'k': listTxt.add("11");
                 break;
-            case "l":
+            case 'l': listTxt.add("12");
                 break;
-            case "m":
+            case 'm': listTxt.add("13");
                 break;
-            case "n":
+            case 'n': listTxt.add("14");
                 break;
-            case "o":
+            case 'o': listTxt.add("15");
                 break;
-            case "p":
+            case 'p': listTxt.add("16");
                 break;
-            case "q":
+            case 'q': listTxt.add("17");
                 break;
-            case "r":
+            case 'r': listTxt.add("18");
                 break;
-            case "s":
+            case 's': listTxt.add("19");
                 break;
-            case "t":
+            case 't': listTxt.add("20");
                 break;
-            case "u":
+            case 'u': listTxt.add("21");
                 break;
-            case "v":
+            case 'v': listTxt.add("22");
                 break;
-            case "w":
+            case 'w': listTxt.add("23");
                 break;
-            case "x":
+            case 'x': listTxt.add("24");
                 break;
-            case "y":
+            case 'y': listTxt.add("25");
                 break;
-            case "z":
+            case 'z': listTxt.add("26");
                 break;
            
             
@@ -98,63 +109,81 @@ public class AlfineCipher {
     
     public void NumToChar(int num){
             switch(num){
-            case 1: EncryptedChar = "A";
+            case 1: sBuff.append("a");
                 break;
-            case 2: 
+            case 2: sBuff.append("b");
                 break;
-            case 3: 
+            case 3: sBuff.append("c");
                 break;
-            case 4:
+            case 4:sBuff.append("d");
                 break;
-            case 5:
+            case 5:sBuff.append("e");
+                break; 
+            case 6: sBuff.append("f");
                 break;
-            case 6:
+            case 7: sBuff.append("g");
                 break;
-            case 7:
+            case 8: sBuff.append("h");
                 break;
-            case 8:
+            case 9: sBuff.append("i");
                 break;
-            case 9:
+            case 10: sBuff.append("j");
                 break;
-            case 10:
+            case 11: sBuff.append("k");
                 break;
-            case 11:
+            case 12: sBuff.append("l");
                 break;
-            case 12:
+            case 13: sBuff.append("m");
                 break;
-            case 13:
+            case 14: sBuff.append("n");
                 break;
-            case 14:
+            case 15: sBuff.append("o");
                 break;
-            case 15:
+            case 16: sBuff.append("p");
                 break;
-            case 16:
+            case 17: sBuff.append("q");
                 break;
-            case 17:
+            case 18: sBuff.append("r");
                 break;
-            case 18:
+            case 19: sBuff.append("s");
                 break;
-            case 19:
+            case 20: sBuff.append("t");
                 break;
-            case 20:
+            case 21: sBuff.append("u");
                 break;
-            case 21:
+            case 22: sBuff.append("v");
                 break;
-            case 22:
+            case 23: sBuff.append("w");
                 break;
-            case 23:
+            case 24: sBuff.append("x");
                 break;
-            case 24:
+            case 25: sBuff.append("y");
                 break;
-            case 25:
-                break;
-            case 26:
+            case 26: sBuff.append("z");
                 break;
            
             
                 
         }
+            
+           
     }
+    
+public char ConvertTxt(String plainTxt, int i){
+        
+       l = plainTxt.charAt(i);
+   
+    return l;
+   
+   }
+
+   public void HoldingArryEncryptTxt(){
+        for(int i = 0; i < listTxt.size(); i++){
+           int stringToNum = Integer.parseInt(listTxt.get(i));
+           listNums.add(stringToNum);
+     }
+        
+   }
 
 
     

@@ -10,25 +10,25 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Stephen Kearns 
+ * @author Stephen J Kearns 
  */
 public class AlfineCipherApp {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
        String plainTxt;
-       int keyA, keyB;
+       int keyA, keyB,m;
+       char l;
+       StringBuffer sBuff;
        
-       //init 
        plainTxt = "";
        keyA = 0;
        keyB = 0;
+       m = 26;
+       l = '\0';
+       sBuff = new StringBuffer();
        
-       //new instances 
-       AlfineCipher Cipher = new AlfineCipher();
-       
+  
+       AlfineCipherEncrypting Encrypting = new AlfineCipherEncrypting(plainTxt, keyA, keyB, m,l,sBuff);
+       AffineCipherDecrypting decrypting = new AffineCipherDecrypting(keyA, keyB, m,l);
        
        plainTxt = JOptionPane.showInputDialog(null,"Enter the text to be encrypted");
        keyA = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter a digit which is coprime with 26"));
@@ -40,13 +40,19 @@ public class AlfineCipherApp {
            keyA = Integer.parseInt(JOptionPane.showInputDialog(null,"You entered an number which isnt co-prime with 26, please re-enter the digit"));
        }
        
-       //pass values, for processing
-       Cipher.setPlainTxt(plainTxt);
-       Cipher.setKeyA(keyA);
-       Cipher.setKeyB(keyB);
+      
+       Encrypting.setPlainTxt(plainTxt);
+       Encrypting.setKeyA(keyA);
+       Encrypting.setKeyB(keyB);
        
+       //encrypts the text, entered by the user, and returns the encryoted txt,for decryption 
+       String encryptedTxt = Encrypting.Encrypt();
        
+      //set the keys, for decryption 
+       decrypting.setKeyA(keyA);
+       decrypting.setKeyB(keyB);
        
+       decrypting.Decrypt(encryptedTxt);
        
        
     }
